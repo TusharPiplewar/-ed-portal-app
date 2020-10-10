@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar  fixed-top navbar-expand-md bg-info navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand bg-" href="#"><img src="https://www.eskooly.com/bb/logos/1588243426.png" alt="Avatar" class="image"></a>
+      <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-1" type="text" placeholder="ID">
+          <button class="btn btn-success bg-info" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </nav>
+
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse  text-center" id="collapsibleNavbar">
+
+
+
+        <ul class="navbar-nav ml-auto ">
+
+
+          <li class="nav-item">
+            <a class="nav-link text-" href="/addemp"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-" href="/viewemp"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-" href="/upload"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-" href="/viewfiles"></a>
+          </li>
+
+
+{% if request.user.is_authenticated is True %}
+<li class="nav-item">
+  <a class="nav-link text-" href="/"><i class="fa fa-language"></i>Language</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-" href="/"><i class="fa fa-stop"></i>Stop Ads</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-" href="/"><i class="fa fa-envelope"></i></a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link text-" href="/"><i class="fa fa-bell" style="font-size:18px"></i></a>
+</li>
+
+
+ <li class="nav-item">
+   <a class="nav-link text-" href="/"><i class="fa fa-globe"></i>Account settings</a>
+ </li>
+
+<li class="nav-item">
+
+  <a class="nav-link text-" href="#">Welcome {{request.user}}</a>
+</li>
+
+
+          <li class="nav-item">
+            <a class="nav-link text-" href="/"><i class="fa fa-home"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-" href="/accounts/logout"><i class="fa fa-user"></i>Logout</a>
+          </li>
+{%else%}
+
+          <li class="nav-item">
+            <a class="nav-link text-" href="/accounts/login">Login</a>
+          </li>
+      <li class="nav-item">
+            <a class="nav-link text-" href="/signup">SignUp</a>
+          </li>
+{%endif%}
+        </ul>
+      </div>
+    </nav>
+<style media="screen">
+  .container{
+margin-top:80px;
+  }
+  .image {
+    display: block;
+    width: 50%;
+    height: 25px;
+  }
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body
+{
+margin: 0;
+font-family: "Lato", sans-serif;
+}
+
+
+.sidebar {
+margin: 0;
+padding: 0;
+width: 200px;
+background-color: #5bc0de;
+position: fixed;
+height: 100%;
+overflow: auto;
+}
+
+.sidebar a {
+display: block;
+color: black;
+padding: 16px;
+text-decoration: none;
+}
+
+.sidebar a.active {
+background-color: #4CAF50;
+color: white;
+}
+
+.sidebar a:hover:not(.active) {
+background-color: #555;
+color: white;
+}
+
+div.content {
+margin-left: 200px;
+padding: 1px 16px;
+height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+.sidebar {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.sidebar a {float: left;}
+div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+.sidebar a {
+  text-align: center;
+  float: none;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<a href="#home">Home</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#institute info">Institute Info</a>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+  classes<i class="fa fa-caret-down"></i>
+  </button>
+<a href="#Allclasses">All classes</a>
+<a href="#Newclasses">New classes</a>
+<a href="#Editdeleteclasses">Edit delete classes</a>
+<a href="#Subjecttoclasses">All classes</a>
+<button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+Students<i class="fa fa-caret-down"></i>
+</button>
+
+<a href="#employee">Employee</a>
+<a href="#accounts">Accounts</a>
+<a href="#attendance">Attendance</a>
+<a href="#fees">Fees</a>
+<a href="#salary">Salary</a>
+<a href="#exams">Exams</a>
+<a href="#class test">Class Test</a>
+<a href="#time table">Time Table</a>
+<a href="#certificates">Certificates</a>
+<a href="#student promotions">Stundent Promotions</a>
+
+</div>
+
+
+
+</body>
+</html>
+body {
+background-image: url("");
+background-color: info;
+background-repeat: no-repeat;
+background-size: 2000px 20000px;
+}
+</style>
+<div class="container">
+
+  {% block parentblock %}
+    <!-- page specific code goes here -->
+  {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends  'edApp/base.html' %}
+
+  {% block parentblock %}
+  <head>
+  <style>
+  body {
+    background-color: #F9F8F7 ;
+  }
+  </style>
+  </head>
+  <body>
+
+    {% load crispy_forms_tags %}
+    <div class="container text-center">
+      <h1>Rules & Regulations </h1> <hr/>
+
+    {% if msg%}
+      <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{{msg}}</strong>
+      </div>
+
+    {%endif%}
+
+    <div class="row justify-content-center">
+       <div class="col-lg-4">
+      <form method="post" >
+       {{ruleForm | crispy}}
+       {%csrf_token%}
+      <input type="submit" name="" value="Save Changes" />
+      </form>
+    </div>
+    </div>
+
+    </div>
+      {%endblock%}

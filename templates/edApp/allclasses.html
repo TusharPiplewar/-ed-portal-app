@@ -1,0 +1,31 @@
+{% extends  'edApp/base.html' %}
+
+  {% block parentblock %}
+  <head>
+  <style>
+  body {
+    background-color: #F9F8F7;
+  }
+  </style>
+  </head>
+  <body>
+    <h1> All Classes:</h1>
+    {% if ClassForm %}
+    <table class="table table-hover">
+      <tr>
+                <th>name of class</th><th>monthly fees</th>
+      </tr>
+        {% for ClassesForm in ClassForm %}
+         <tr>
+
+           <td>{{ClassesForm.nameofclass}}</td>
+           <td>{{ClassesForm.monthlyfees}}</td>
+
+         </tr>
+        {%endfor%}
+      </table>
+    {%else%}
+     <h2>No Data Founds</h2>
+    {%endif%}
+
+{%endblock%}

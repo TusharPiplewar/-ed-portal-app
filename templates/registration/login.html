@@ -1,0 +1,17 @@
+<head>
+<style>
+body {
+  background-color: #5bc0de;
+}
+</style>
+</head>
+  <center>
+{% load crispy_forms_tags %}
+<h1>Admin Login Form</h1>
+<img src="https://www.eskooly.com/bb/logos/1588243426.png" alt="">
+<form  method="post">
+{{form| crispy}}
+{%csrf_token%}
+<input type="submit" value="Login" />
+</form>
+</center>

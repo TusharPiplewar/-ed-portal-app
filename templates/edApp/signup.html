@@ -1,0 +1,31 @@
+<head>
+<style>
+body {
+  background-color: #5bc0de;
+}
+</style>
+</head>
+<center>
+{% load crispy_forms_tags %}
+<div class="container text-center">
+  <h1>New User Signup Form</h1> <hr/>
+  <img src="https://www.eskooly.com/bb/logos/1588243426.png" alt="">
+{% if msg%}
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{msg}}</strong>
+  </div>
+{%endif%}
+
+<div class="row justify-content-center">
+   <div class="col-lg-4">
+  <form method="post" >
+   {{signupform | crispy}}
+   {%csrf_token%}
+  <input type="submit" name="" value="Save" class="btn btn-" />
+  </form>
+</div>
+</div>
+<br/><br/><br/>
+</div>
+</center>
